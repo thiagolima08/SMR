@@ -42,6 +42,28 @@ public class Repositorio {
 		return mensagens;
 	}
 	
+	// Implementação do espionar mensagem pelo ADM
+	public ArrayList<Mensagem> localizarMensagem(String termo){
+		ArrayList<Mensagem> listando_msg = new ArrayList<>();
+		
+		if(termo.equals("")) {
+			return mensagens;
+		}
+		
+		else {
+			
+			for(Mensagem m : mensagens) {
+				if(m.getTexto().contains(termo)) {
+					listando_msg.add(m);
+				}
+				
+			}
+			return listando_msg;
+		}
+		
+	}
+	
+	
 	public ArrayList<Pessoa> getPessoas() {
 		return  
 				new ArrayList<Pessoa> (pessoas.values());	//TreeMap --> ArrayList
