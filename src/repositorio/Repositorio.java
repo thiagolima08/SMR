@@ -46,7 +46,12 @@ public class Repositorio {
 	public ArrayList<Mensagem> localizarMensagem(String termo){
 		ArrayList<Mensagem> listando_msg = new ArrayList<>();
 		
-		if(!termo.equals("")) {
+		if(termo.equals("")) {
+			return mensagens;
+		}
+		
+		else {
+			
 			for(Mensagem m : mensagens) {
 				if(m.getTexto().contains(termo)) {
 					listando_msg.add(m);
@@ -55,7 +60,7 @@ public class Repositorio {
 			}
 			return listando_msg;
 		}
-		return mensagens;
+		
 	}
 	
 	
